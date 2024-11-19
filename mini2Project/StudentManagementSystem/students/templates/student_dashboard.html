@@ -1,0 +1,36 @@
+<!-- templates/students/student_dashboard.html -->
+{% extends 'base.html' %}
+
+{% block title %}{{ student.name }}'s Dashboard{% endblock %}
+
+{% block content %}
+    <h1>{{ student.name }}'s Dashboard</h1>
+    <p><strong>Email:</strong> {{ student.email }}</p>
+    <p><strong>Date of Birth:</strong> {{ student.date_of_birth }}</p>
+    <p><strong>Student ID:</strong> {{ student.student_id }}</p>
+    <p><strong>Phone Number:</strong> {{ student.phone_number }}</p>
+    <p><strong>Address:</strong> {{ student.address }}</p>
+    <p><strong>Registration Date:</strong> {{ student.registration_date }}</p>
+
+    <h3>Performance Summary</h3>
+    <ul>
+        <li><strong>Average Grade:</strong> <span id="average_grade">Loading...</span></li>
+        <li><strong>Attendance Rate:</strong> <span id="attendance_rate">Loading...</span></li>
+        <li><strong>Total Enrolled Courses:</strong> <span id="total_courses">Loading...</span></li>
+    </ul>
+    <script>
+        // JavaScript to fetch performance data from the API
+        function loadPerformanceData() {
+            fetch('/students/api/student/performance/')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('average_grade').textContent = data.average_grade;
+                    document.getElementById('attendance_rate').textContent = data.attendance_rate;
+                    document.getElementById('total_courses').textContent = data.total_courses;
+                });
+        }
+
+        // Load performance data on page load
+        window.onload = loadPerformanceData;
+    </script>
+{% endblock %}

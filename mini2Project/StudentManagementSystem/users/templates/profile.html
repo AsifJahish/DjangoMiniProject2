@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% load widget_tweaks %}
+{% load static %}
+
+{% block title %}User Profile{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'users/css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg">
+                <div class="card-header text-center bg-primary text-white">
+                    <h2>Welcome, {{ user.email }}</h2>
+                </div>
+                <div class="card-body">
+                    <div class="profile-details">
+                        <p><strong>Role:</strong> {{ user.role }}</p>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

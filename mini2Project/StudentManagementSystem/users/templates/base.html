@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}User Management System{% endblock %}</title>
+    <!-- Base CSS for overall layout -->
+    <link rel="stylesheet" href="{% static 'users/css/base.css' %}">
+    <!-- Additional CSS for specific pages, if any -->
+    {% block extra_css %}
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'register' %}">Sign Up</a>
+            <a href="{% url 'login' %}">Login</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>
