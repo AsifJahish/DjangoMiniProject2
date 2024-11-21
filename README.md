@@ -19,11 +19,6 @@ This is a **Student Management System** built using **Django** and **Django Rest
 - Django Rest Framework
 - PostgreSQL/MySQL (or SQLite for development)
 
-### Clone the Repository
-
-```bash
-git clone https://github.com/yourusername/student-management-system.git
-cd student-management-system
 
 
 
@@ -72,3 +67,20 @@ cd student-management-system
 This **Student Management System API** covers user registration, course management, grades, attendance, and notifications, with role-based access to ensure proper data handling. Each module is integrated and secured for admin, teacher, and student use.
 
 For more details or assistance, feel free to contact me!
+
+
+
+
+
+
+
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/student-management-system.git
+cd student-management-system
+
+
+
+
